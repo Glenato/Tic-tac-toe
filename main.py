@@ -11,7 +11,16 @@ def selected_computer():
         choosen = input("Choose : ")
     choosen = choosen.lower()
 
-
+def who_starts ():
+    who = input ("Write \"ME\" if you whant to start or \"Computer\" for the computer to start : ")
+    while who.lower() not in ("me", "computer"):
+        print ("Invalid input")
+        who = input ("Write \"ME\" if you whant to start or \"Computer\" for the computer to start : ")
+    if who.lower() == "computer":
+        return True 
+    else:
+        return False
+    
 def user_input_to_row_and_col(user_input):
     row = int(user_input / 3)
     col = (user_input - (row*3))
@@ -133,6 +142,11 @@ board = [[" " for _ in range(3)] for _ in range(3)]
 selected_computer()
 print_board()
 
+if who_starts():
+    computer_move()
+    print_board()
+
+
 while True:
     user_input = input("Give a number : ")
     #and check_if_move_is_valid(user_input)
@@ -159,6 +173,11 @@ while True:
                 if check_if_won("O", "Computer"):
                     print ("You have lost...")
                     reset()
+                if check_if_board_is_full():
+                    print ("It is a Draw")
+                    reset()
+                    print_board()
+                    continue 
 
             #add_users_move_to_board(user_input)
     except ValueError:
