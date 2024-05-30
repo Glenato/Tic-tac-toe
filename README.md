@@ -25,5 +25,4 @@ Such as this :
    | O | X
 ```
 Each time you win or lose a new game will automaticaly start
-
 The programm will first ask you to choose an opponent, and than to choose if you or the bot starts
