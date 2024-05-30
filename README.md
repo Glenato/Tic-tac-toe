@@ -24,5 +24,7 @@ Such as this :
 -----------
    | O | X
 ```
+In this exemple the player that plays X won because he aligned 3 of them diagonaly
+
 Each time you win or lose a new game will automaticaly start
 The programm will first ask you to choose an opponent, and than to choose if you or the bot starts
